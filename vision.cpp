@@ -50,7 +50,7 @@ void draw_bboxes(const cv::Mat& image, const std::vector<BoxInfo>& bboxes, int v
         float w = (bbox.x2 - x1);
         float h = (bbox.y2 - y1);
 
-        y1 += v_shift;
+        y1 -= v_shift;
         x1 *= x_scaler;
         y1 *= y_scaler;
         w *= x_scaler;

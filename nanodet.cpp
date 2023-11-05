@@ -133,7 +133,7 @@ std::vector<BoxInfo> Nanodet::detect(ncnn::Mat &input)
         ncnn::Extractor ex = detector.create_extractor();
 
         ncnn::Mat resized(input_size[0], input_size[1], 3);
-        bordered_resize(input, resized, input_size[0], ((float) input_size[0] / 2 ) - (input_size[0] / 2));
+        bordered_resize(input, resized, input_size[0], ((float) input.h / 2 ) - (input_size[1] / 2));
 
         ex.input("data", resized);
 

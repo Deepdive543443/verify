@@ -48,7 +48,6 @@ std::vector<BoxInfo> FastestDet::detect(ncnn::Mat &input)
         ex.input("data", resized);
 
         // Prediction
-        // ncnn::Mat out;
         ex.extract("output", out);
     }
 
@@ -102,15 +101,5 @@ std::vector<BoxInfo> FastestDet::detect(ncnn::Mat &input)
     }
     // Debug
     nms(results, 0.65);
-    for (BoxInfo info : results)
-    {
-        std::cout << info.x1 << std::endl; 
-        std::cout << info.y1 << std::endl;
-        std::cout << info.x2 << std::endl;
-        std::cout << info.y2 << std::endl;
-        std::cout << info.label << std::endl;
-        std::cout << info.score << std::endl;
-        std::cout << std::endl;
-    }
     return results;   
 }
