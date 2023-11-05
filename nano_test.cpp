@@ -20,6 +20,7 @@ int main(int argc, char** argv)
     nanodet.load_param("../config/nanodet-plus-m_416-int8.json");
 
     cv::Mat bgr = cv::imread("../image/1 EYFejGUjvjPcc4PZTwoufw.jpg", 1);
+    // cv::Mat bgr = cv::imread("../image/3.jpg", 1);
     ncnn::Mat input = ncnn::Mat::from_pixels(bgr.data, ncnn::Mat::PIXEL_BGR, bgr.cols, bgr.rows);
 
     nanodet.inference_test();
