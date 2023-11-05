@@ -18,8 +18,6 @@ target_link_libraries(detkit ncnn)
 
 target_include_directories(detkit PRIVATE "/home/justinfung/cpp_libs/rapidjson-1.1.0/include")
 
-
-
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
 include(CPack)

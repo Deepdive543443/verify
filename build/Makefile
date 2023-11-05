@@ -547,29 +547,53 @@ detector.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/detkit.dir/build.make CMakeFiles/detkit.dir/detector.cpp.s
 .PHONY : detector.cpp.s
 
-nano_test.o: nano_test.cpp.o
-.PHONY : nano_test.o
+fastest_test.o: fastest_test.cpp.o
+.PHONY : fastest_test.o
 
 # target to build an object file
-nano_test.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/detkit.dir/build.make CMakeFiles/detkit.dir/nano_test.cpp.o
-.PHONY : nano_test.cpp.o
+fastest_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/detkit.dir/build.make CMakeFiles/detkit.dir/fastest_test.cpp.o
+.PHONY : fastest_test.cpp.o
 
-nano_test.i: nano_test.cpp.i
-.PHONY : nano_test.i
+fastest_test.i: fastest_test.cpp.i
+.PHONY : fastest_test.i
 
 # target to preprocess a source file
-nano_test.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/detkit.dir/build.make CMakeFiles/detkit.dir/nano_test.cpp.i
-.PHONY : nano_test.cpp.i
+fastest_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/detkit.dir/build.make CMakeFiles/detkit.dir/fastest_test.cpp.i
+.PHONY : fastest_test.cpp.i
 
-nano_test.s: nano_test.cpp.s
-.PHONY : nano_test.s
+fastest_test.s: fastest_test.cpp.s
+.PHONY : fastest_test.s
 
 # target to generate assembly for a file
-nano_test.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/detkit.dir/build.make CMakeFiles/detkit.dir/nano_test.cpp.s
-.PHONY : nano_test.cpp.s
+fastest_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/detkit.dir/build.make CMakeFiles/detkit.dir/fastest_test.cpp.s
+.PHONY : fastest_test.cpp.s
+
+fastestdet.o: fastestdet.cpp.o
+.PHONY : fastestdet.o
+
+# target to build an object file
+fastestdet.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/detkit.dir/build.make CMakeFiles/detkit.dir/fastestdet.cpp.o
+.PHONY : fastestdet.cpp.o
+
+fastestdet.i: fastestdet.cpp.i
+.PHONY : fastestdet.i
+
+# target to preprocess a source file
+fastestdet.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/detkit.dir/build.make CMakeFiles/detkit.dir/fastestdet.cpp.i
+.PHONY : fastestdet.cpp.i
+
+fastestdet.s: fastestdet.cpp.s
+.PHONY : fastestdet.s
+
+# target to generate assembly for a file
+fastestdet.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/detkit.dir/build.make CMakeFiles/detkit.dir/fastestdet.cpp.s
+.PHONY : fastestdet.cpp.s
 
 nanodet.o: nanodet.cpp.o
 .PHONY : nanodet.o
@@ -662,9 +686,12 @@ help:
 	@echo "... detector.o"
 	@echo "... detector.i"
 	@echo "... detector.s"
-	@echo "... nano_test.o"
-	@echo "... nano_test.i"
-	@echo "... nano_test.s"
+	@echo "... fastest_test.o"
+	@echo "... fastest_test.i"
+	@echo "... fastest_test.s"
+	@echo "... fastestdet.o"
+	@echo "... fastestdet.i"
+	@echo "... fastestdet.s"
 	@echo "... nanodet.o"
 	@echo "... nanodet.i"
 	@echo "... nanodet.s"

@@ -36,7 +36,7 @@ void bordered_resize(ncnn::Mat &src, ncnn::Mat &dst, int dst_w, int draw_coor)
     }
 }
 
-void draw_bboxes(const cv::Mat& image, const std::vector<BoxInfo>& bboxes, int v_shift, float scaler)
+void draw_bboxes(const cv::Mat& image, const std::vector<BoxInfo>& bboxes, int v_shift, float x_scaler, float y_scaler)
 {
     printf("=======================================\n");
     printf("% 12s % 2s % ", "Label", "Score");
@@ -51,10 +51,10 @@ void draw_bboxes(const cv::Mat& image, const std::vector<BoxInfo>& bboxes, int v
         float h = (bbox.y2 - y1);
 
         y1 += v_shift;
-        x1 *= scaler;
-        y1 *= scaler;
-        w *= scaler;
-        h *= scaler;
+        x1 *= x_scaler;
+        y1 *= y_scaler;
+        w *= x_scaler;
+        h *= y_scaler;
 
         uint8_t *rgba = (uint8_t *) malloc(4);
         
