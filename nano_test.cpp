@@ -29,7 +29,7 @@ int main(int argc, char** argv)
     int drawing_coor = ((float) input.h / 2 ) - (nanodet.input_size[1] / 2);
     float scale = (float) input.w / inference_size;
 
-    draw_bboxes(bgr, boxxes, drawing_coor, scale, scale);
+    draw_bboxes(bgr, boxxes, 0, scale, scale);
     cv::imwrite("../output/test_output.png", bgr);
     return 0;
 }
