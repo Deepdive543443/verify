@@ -155,3 +155,9 @@ std::vector<BoxInfo> Nanodet::detect(ncnn::Mat &input)
     }
     return dets;
 }
+
+void Nanodet::draw_boxxes(cv::Mat &input, std::vector<BoxInfo> &boxxes)
+{
+    float scale = (float) input.cols / input_size[0];
+    draw_bboxes(input, boxxes, 0, scale, scale);
+}

@@ -1,5 +1,6 @@
 #include "fastestdet.h"
 #include <cmath>
+#include "vision.h"
 
 //Debug
 #include "simpleocv.h"
@@ -102,4 +103,11 @@ std::vector<BoxInfo> FastestDet::detect(ncnn::Mat &input)
     // Debug
     nms(results, 0.65);
     return results;   
+}
+
+void FastestDet::draw_boxxes(cv::Mat &input, std::vector<BoxInfo> &boxxes)
+{
+    // float x_scale = (float) input.cols / input_size[0];
+    // float y_scale = (float) input.rows / input_size[1];
+    draw_bboxes(input, boxxes, 0, 1, 1);
 }

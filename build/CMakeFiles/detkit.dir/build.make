@@ -83,10 +83,24 @@ CMakeFiles/detkit.dir/detector.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/detkit.dir/detector.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/justinfung/cpp_projects/detector/detector.cpp -o CMakeFiles/detkit.dir/detector.cpp.s
 
+CMakeFiles/detkit.dir/fastest_test.cpp.o: CMakeFiles/detkit.dir/flags.make
+CMakeFiles/detkit.dir/fastest_test.cpp.o: /home/justinfung/cpp_projects/detector/fastest_test.cpp
+CMakeFiles/detkit.dir/fastest_test.cpp.o: CMakeFiles/detkit.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/justinfung/cpp_projects/detector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/detkit.dir/fastest_test.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/detkit.dir/fastest_test.cpp.o -MF CMakeFiles/detkit.dir/fastest_test.cpp.o.d -o CMakeFiles/detkit.dir/fastest_test.cpp.o -c /home/justinfung/cpp_projects/detector/fastest_test.cpp
+
+CMakeFiles/detkit.dir/fastest_test.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/detkit.dir/fastest_test.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/justinfung/cpp_projects/detector/fastest_test.cpp > CMakeFiles/detkit.dir/fastest_test.cpp.i
+
+CMakeFiles/detkit.dir/fastest_test.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/detkit.dir/fastest_test.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/justinfung/cpp_projects/detector/fastest_test.cpp -o CMakeFiles/detkit.dir/fastest_test.cpp.s
+
 CMakeFiles/detkit.dir/fastestdet.cpp.o: CMakeFiles/detkit.dir/flags.make
 CMakeFiles/detkit.dir/fastestdet.cpp.o: /home/justinfung/cpp_projects/detector/fastestdet.cpp
 CMakeFiles/detkit.dir/fastestdet.cpp.o: CMakeFiles/detkit.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/justinfung/cpp_projects/detector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/detkit.dir/fastestdet.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/justinfung/cpp_projects/detector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/detkit.dir/fastestdet.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/detkit.dir/fastestdet.cpp.o -MF CMakeFiles/detkit.dir/fastestdet.cpp.o.d -o CMakeFiles/detkit.dir/fastestdet.cpp.o -c /home/justinfung/cpp_projects/detector/fastestdet.cpp
 
 CMakeFiles/detkit.dir/fastestdet.cpp.i: cmake_force
@@ -96,20 +110,6 @@ CMakeFiles/detkit.dir/fastestdet.cpp.i: cmake_force
 CMakeFiles/detkit.dir/fastestdet.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/detkit.dir/fastestdet.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/justinfung/cpp_projects/detector/fastestdet.cpp -o CMakeFiles/detkit.dir/fastestdet.cpp.s
-
-CMakeFiles/detkit.dir/nano_test.cpp.o: CMakeFiles/detkit.dir/flags.make
-CMakeFiles/detkit.dir/nano_test.cpp.o: /home/justinfung/cpp_projects/detector/nano_test.cpp
-CMakeFiles/detkit.dir/nano_test.cpp.o: CMakeFiles/detkit.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/justinfung/cpp_projects/detector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/detkit.dir/nano_test.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/detkit.dir/nano_test.cpp.o -MF CMakeFiles/detkit.dir/nano_test.cpp.o.d -o CMakeFiles/detkit.dir/nano_test.cpp.o -c /home/justinfung/cpp_projects/detector/nano_test.cpp
-
-CMakeFiles/detkit.dir/nano_test.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/detkit.dir/nano_test.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/justinfung/cpp_projects/detector/nano_test.cpp > CMakeFiles/detkit.dir/nano_test.cpp.i
-
-CMakeFiles/detkit.dir/nano_test.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/detkit.dir/nano_test.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/justinfung/cpp_projects/detector/nano_test.cpp -o CMakeFiles/detkit.dir/nano_test.cpp.s
 
 CMakeFiles/detkit.dir/nanodet.cpp.o: CMakeFiles/detkit.dir/flags.make
 CMakeFiles/detkit.dir/nanodet.cpp.o: /home/justinfung/cpp_projects/detector/nanodet.cpp
@@ -142,8 +142,8 @@ CMakeFiles/detkit.dir/vision.cpp.s: cmake_force
 # Object files for target detkit
 detkit_OBJECTS = \
 "CMakeFiles/detkit.dir/detector.cpp.o" \
+"CMakeFiles/detkit.dir/fastest_test.cpp.o" \
 "CMakeFiles/detkit.dir/fastestdet.cpp.o" \
-"CMakeFiles/detkit.dir/nano_test.cpp.o" \
 "CMakeFiles/detkit.dir/nanodet.cpp.o" \
 "CMakeFiles/detkit.dir/vision.cpp.o"
 
@@ -151,8 +151,8 @@ detkit_OBJECTS = \
 detkit_EXTERNAL_OBJECTS =
 
 detkit: CMakeFiles/detkit.dir/detector.cpp.o
+detkit: CMakeFiles/detkit.dir/fastest_test.cpp.o
 detkit: CMakeFiles/detkit.dir/fastestdet.cpp.o
-detkit: CMakeFiles/detkit.dir/nano_test.cpp.o
 detkit: CMakeFiles/detkit.dir/nanodet.cpp.o
 detkit: CMakeFiles/detkit.dir/vision.cpp.o
 detkit: CMakeFiles/detkit.dir/build.make

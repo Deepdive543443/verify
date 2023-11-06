@@ -9,8 +9,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/justinfung/cpp_projects/detector/detector.cpp" "CMakeFiles/detkit.dir/detector.cpp.o" "gcc" "CMakeFiles/detkit.dir/detector.cpp.o.d"
+  "/home/justinfung/cpp_projects/detector/fastest_test.cpp" "CMakeFiles/detkit.dir/fastest_test.cpp.o" "gcc" "CMakeFiles/detkit.dir/fastest_test.cpp.o.d"
   "/home/justinfung/cpp_projects/detector/fastestdet.cpp" "CMakeFiles/detkit.dir/fastestdet.cpp.o" "gcc" "CMakeFiles/detkit.dir/fastestdet.cpp.o.d"
-  "/home/justinfung/cpp_projects/detector/nano_test.cpp" "CMakeFiles/detkit.dir/nano_test.cpp.o" "gcc" "CMakeFiles/detkit.dir/nano_test.cpp.o.d"
   "/home/justinfung/cpp_projects/detector/nanodet.cpp" "CMakeFiles/detkit.dir/nanodet.cpp.o" "gcc" "CMakeFiles/detkit.dir/nanodet.cpp.o.d"
   "/home/justinfung/cpp_projects/detector/vision.cpp" "CMakeFiles/detkit.dir/vision.cpp.o" "gcc" "CMakeFiles/detkit.dir/vision.cpp.o.d"
   )
