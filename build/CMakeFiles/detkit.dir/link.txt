@@ -1,2 +1,0 @@
-/usr/bin/ar qc libdetkit.a CMakeFiles/detkit.dir/lib/detector.cpp.o CMakeFiles/detkit.dir/lib/fastestdet.cpp.o CMakeFiles/detkit.dir/lib/nanodet.cpp.o CMakeFiles/detkit.dir/lib/vision.cpp.o
-/usr/bin/ranlib libdetkit.a
