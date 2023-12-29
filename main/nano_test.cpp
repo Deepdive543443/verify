@@ -8,8 +8,8 @@ int main(int argc, char** argv)
 {
     // Nanodet 
     Nanodet nanodet;
-    nanodet.load_param("../config/nanodet-plus-m_416-int8.json");
-    // nanodet.load_param("../config/nanodet-plus-m-1.5x_416_int8.json");
+    // nanodet.load_param("../config/nanodet-plus-m_416-int8.json");
+    nanodet.load_param("../config/nanodet-plus-m-1.5x_416_int8.json");
     // nanodet.load_param("../config/nanodet-plus-m-1.5x_416.json");
     // nanodet.load_param("../config/nanodet-plus-m_416.json");
     // nanodet.load_param("../config/nanodet-plus-m-1.5x_416-opt.json");
