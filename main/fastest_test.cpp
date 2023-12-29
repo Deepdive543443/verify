@@ -4,14 +4,6 @@
 #include "net.h"
 #include "simpleocv.h"
 
-#include "rapidjson/document.h"
-#include "rapidjson/writer.h"
-#include "rapidjson/stringbuffer.h"
-#include "rapidjson/filereadstream.h"
-
-// #include "vision.h"
-
-
 int main(int argc, char** argv)
 {
     // Fastest Det
