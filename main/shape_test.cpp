@@ -43,72 +43,24 @@ int main(int argc, char** argv)
 {
     Nanodet nanodet;
     // nanodet.load_param("../config/nanodet-plus-m_416-int8.json");
-    nanodet.load_param("../config/nanodet-plus-m-1.5x_416_int8.json");
+    // nanodet.load_param("../config/nanodet-plus-m-1.5x_416_int8.json");
     // nanodet.load_param("../config/nanodet-plus-m-1.5x_416.json");
+    nanodet.load_param("../config/nanodet-plus-m-1.5x_416_multi_output.json");
     // nanodet.load_param("../config/nanodet-plus-m_416.json");
 
     ncnn::Mat input;
-    randn_ncnn(input, 416, 416, 3);
+    randn_ncnn(input, 416, 320, 3);
     print_shape("data", input);
 
-    static const char* output_names[] = {
-        "output", 
-        "/head/Concat_output_0",
-        "/head/Concat_2_output_0",
-        "/head/Concat_4_output_0",
-        "/head/Concat_6_output_0"
-    };
-
-    for (int i = 0; i < 5; i++)
+    const std::vector<const char*>& output_names = nanodet.detector.output_names();
+    ncnn::Extractor ex = nanodet.detector.create_extractor();
+    ex.input("data", input);
+    for (const char* name : output_names)
     {
-        ncnn::Extractor ex = nanodet.detector.create_extractor();
-        ex.input("data", input);
         ncnn::Mat out;
-        ex.extract(output_names[i], out);
-        print_shape(output_names[i], out);
+        ex.extract(name, out);
+        out = out.reshape(out.c, out.w, out.h);
+        print_shape(name, out);
     }
-
-    // {
-    //     ncnn::Extractor ex = nanodet.detector.create_extractor();
-    //     ex.input("data", input);
-    //     ncnn::Mat out;
-    //     ex.extract("output", out);
-    //     print_shape("output", out);
-    // }
-
-    // {
-    //     ncnn::Extractor ex = nanodet.detector.create_extractor();
-    //     ex.input("data", input);
-    //     ncnn::Mat stride_out;
-    //     ex.extract("/head/Concat_output_0", stride_out);
-    //     print_shape("/head/Concat_output_0", stride_out);
-    // }
-
-    // {
-    //     ncnn::Extractor ex = nanodet.detector.create_extractor();
-    //     ex.input("data", input);
-    //     ncnn::Mat stride_out;
-    //     ex.extract("/head/Concat_2_output_0", stride_out);
-    //     print_shape("/head/Concat_2_output_0", stride_out);
-    // }
-
-    // {
-    //     ncnn::Extractor ex = nanodet.detector.create_extractor();
-    //     ex.input("data", input);
-    //     ncnn::Mat stride_out;
-    //     ex.extract("/head/Concat_4_output_0", stride_out);
-    //     print_shape("/head/Concat_4_output_0", stride_out);
-    // }
-
-
-    // {
-    //     ncnn::Extractor ex = nanodet.detector.create_extractor();
-    //     ex.input("data", input);
-    //     ncnn::Mat stride_out;
-    //     ex.extract("/head/Concat_6_output_0", stride_out);
-    //     print_shape("/head/Concat_6_output_0", stride_out);
-    // }
-
-
     return 0;
 }

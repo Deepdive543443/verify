@@ -16,6 +16,7 @@ int main(int argc, char** argv)
 
 
     cv::Mat bgr = cv::imread("../image/1 EYFejGUjvjPcc4PZTwoufw.jpg", 1);
+    // cv::Mat bgr = cv::imread("../image/test.jpg", 1);
     ncnn::Mat input = ncnn::Mat::from_pixels(bgr.data, ncnn::Mat::PIXEL_BGR2RGB, bgr.cols, bgr.rows);
 
     nanodet.inference_test();
