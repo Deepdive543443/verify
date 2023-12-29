@@ -27,6 +27,8 @@
 /home/justinfung/cpp_projects/detector/build/CMakeFiles/ContinuousMemCheck.dir
 /home/justinfung/cpp_projects/detector/build/CMakeFiles/ContinuousSubmit.dir
 /home/justinfung/cpp_projects/detector/build/CMakeFiles/detkit.dir
+/home/justinfung/cpp_projects/detector/build/CMakeFiles/Fastest_test.dir
+/home/justinfung/cpp_projects/detector/build/CMakeFiles/Nano_test.dir
 /home/justinfung/cpp_projects/detector/build/CMakeFiles/package.dir
 /home/justinfung/cpp_projects/detector/build/CMakeFiles/package_source.dir
 /home/justinfung/cpp_projects/detector/build/CMakeFiles/test.dir

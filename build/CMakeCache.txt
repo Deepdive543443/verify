@@ -333,6 +333,9 @@ detkit_BINARY_DIR:STATIC=/home/justinfung/cpp_projects/detector/build
 //Value Computed by CMake
 detkit_IS_TOP_LEVEL:STATIC=ON
 
+//Dependencies for the target
+detkit_LIB_DEPENDS:STATIC=general;ncnn;
+
 //Value Computed by CMake
 detkit_SOURCE_DIR:STATIC=/home/justinfung/cpp_projects/detector
 

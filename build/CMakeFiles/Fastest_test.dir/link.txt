@@ -1,0 +1,1 @@
+/usr/bin/c++ -rdynamic CMakeFiles/Fastest_test.dir/main/fastest_test.cpp.o -o Fastest_test  libdetkit.a /home/justinfung/cpp_libs/ncnn_x86/lib/libncnn.a -lgomp -Wl,-Bstatic -lpthread -Wl,-Bdynamic 

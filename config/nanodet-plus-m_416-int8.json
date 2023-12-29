@@ -5,7 +5,7 @@
 
     "config":
     {
-        "input_shape": [416, 416],
+        "input_shape": [320, 320],
         "stride": [8, 16, 32, 64],
         "num_classes": 80,
         "reg_max": 7,

@@ -173,4 +173,6 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/ContinuousMemCheck.dir/DependInfo.cmake"
   "CMakeFiles/ContinuousSubmit.dir/DependInfo.cmake"
   "CMakeFiles/detkit.dir/DependInfo.cmake"
+  "CMakeFiles/Fastest_test.dir/DependInfo.cmake"
+  "CMakeFiles/Nano_test.dir/DependInfo.cmake"
   )

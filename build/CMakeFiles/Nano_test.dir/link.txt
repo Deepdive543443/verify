@@ -1,0 +1,1 @@
+/usr/bin/c++ -rdynamic CMakeFiles/Nano_test.dir/main/nano_test.cpp.o -o Nano_test  libdetkit.a /home/justinfung/cpp_libs/ncnn_x86/lib/libncnn.a -lgomp -Wl,-Bstatic -lpthread -Wl,-Bdynamic 

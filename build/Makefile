@@ -523,125 +523,175 @@ detkit/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/detkit.dir/build.make CMakeFiles/detkit.dir/build
 .PHONY : detkit/fast
 
-detector.o: detector.cpp.o
-.PHONY : detector.o
+#=============================================================================
+# Target rules for targets named Fastest_test
+
+# Build rule for target.
+Fastest_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Fastest_test
+.PHONY : Fastest_test
+
+# fast build rule for target.
+Fastest_test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fastest_test.dir/build.make CMakeFiles/Fastest_test.dir/build
+.PHONY : Fastest_test/fast
+
+#=============================================================================
+# Target rules for targets named Nano_test
+
+# Build rule for target.
+Nano_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Nano_test
+.PHONY : Nano_test
+
+# fast build rule for target.
+Nano_test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Nano_test.dir/build.make CMakeFiles/Nano_test.dir/build
+.PHONY : Nano_test/fast
+
+lib/detector.o: lib/detector.cpp.o
+.PHONY : lib/detector.o
 
 # target to build an object file
-detector.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/detkit.dir/build.make CMakeFiles/detkit.dir/detector.cpp.o
-.PHONY : detector.cpp.o
+lib/detector.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/detkit.dir/build.make CMakeFiles/detkit.dir/lib/detector.cpp.o
+.PHONY : lib/detector.cpp.o
 
-detector.i: detector.cpp.i
-.PHONY : detector.i
+lib/detector.i: lib/detector.cpp.i
+.PHONY : lib/detector.i
 
 # target to preprocess a source file
-detector.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/detkit.dir/build.make CMakeFiles/detkit.dir/detector.cpp.i
-.PHONY : detector.cpp.i
+lib/detector.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/detkit.dir/build.make CMakeFiles/detkit.dir/lib/detector.cpp.i
+.PHONY : lib/detector.cpp.i
 
-detector.s: detector.cpp.s
-.PHONY : detector.s
+lib/detector.s: lib/detector.cpp.s
+.PHONY : lib/detector.s
 
 # target to generate assembly for a file
-detector.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/detkit.dir/build.make CMakeFiles/detkit.dir/detector.cpp.s
-.PHONY : detector.cpp.s
+lib/detector.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/detkit.dir/build.make CMakeFiles/detkit.dir/lib/detector.cpp.s
+.PHONY : lib/detector.cpp.s
 
-fastest_test.o: fastest_test.cpp.o
-.PHONY : fastest_test.o
+lib/fastestdet.o: lib/fastestdet.cpp.o
+.PHONY : lib/fastestdet.o
 
 # target to build an object file
-fastest_test.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/detkit.dir/build.make CMakeFiles/detkit.dir/fastest_test.cpp.o
-.PHONY : fastest_test.cpp.o
+lib/fastestdet.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/detkit.dir/build.make CMakeFiles/detkit.dir/lib/fastestdet.cpp.o
+.PHONY : lib/fastestdet.cpp.o
 
-fastest_test.i: fastest_test.cpp.i
-.PHONY : fastest_test.i
+lib/fastestdet.i: lib/fastestdet.cpp.i
+.PHONY : lib/fastestdet.i
 
 # target to preprocess a source file
-fastest_test.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/detkit.dir/build.make CMakeFiles/detkit.dir/fastest_test.cpp.i
-.PHONY : fastest_test.cpp.i
+lib/fastestdet.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/detkit.dir/build.make CMakeFiles/detkit.dir/lib/fastestdet.cpp.i
+.PHONY : lib/fastestdet.cpp.i
 
-fastest_test.s: fastest_test.cpp.s
-.PHONY : fastest_test.s
+lib/fastestdet.s: lib/fastestdet.cpp.s
+.PHONY : lib/fastestdet.s
 
 # target to generate assembly for a file
-fastest_test.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/detkit.dir/build.make CMakeFiles/detkit.dir/fastest_test.cpp.s
-.PHONY : fastest_test.cpp.s
+lib/fastestdet.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/detkit.dir/build.make CMakeFiles/detkit.dir/lib/fastestdet.cpp.s
+.PHONY : lib/fastestdet.cpp.s
 
-fastestdet.o: fastestdet.cpp.o
-.PHONY : fastestdet.o
+lib/nanodet.o: lib/nanodet.cpp.o
+.PHONY : lib/nanodet.o
 
 # target to build an object file
-fastestdet.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/detkit.dir/build.make CMakeFiles/detkit.dir/fastestdet.cpp.o
-.PHONY : fastestdet.cpp.o
+lib/nanodet.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/detkit.dir/build.make CMakeFiles/detkit.dir/lib/nanodet.cpp.o
+.PHONY : lib/nanodet.cpp.o
 
-fastestdet.i: fastestdet.cpp.i
-.PHONY : fastestdet.i
+lib/nanodet.i: lib/nanodet.cpp.i
+.PHONY : lib/nanodet.i
 
 # target to preprocess a source file
-fastestdet.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/detkit.dir/build.make CMakeFiles/detkit.dir/fastestdet.cpp.i
-.PHONY : fastestdet.cpp.i
+lib/nanodet.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/detkit.dir/build.make CMakeFiles/detkit.dir/lib/nanodet.cpp.i
+.PHONY : lib/nanodet.cpp.i
 
-fastestdet.s: fastestdet.cpp.s
-.PHONY : fastestdet.s
+lib/nanodet.s: lib/nanodet.cpp.s
+.PHONY : lib/nanodet.s
 
 # target to generate assembly for a file
-fastestdet.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/detkit.dir/build.make CMakeFiles/detkit.dir/fastestdet.cpp.s
-.PHONY : fastestdet.cpp.s
+lib/nanodet.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/detkit.dir/build.make CMakeFiles/detkit.dir/lib/nanodet.cpp.s
+.PHONY : lib/nanodet.cpp.s
 
-nanodet.o: nanodet.cpp.o
-.PHONY : nanodet.o
+lib/vision.o: lib/vision.cpp.o
+.PHONY : lib/vision.o
 
 # target to build an object file
-nanodet.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/detkit.dir/build.make CMakeFiles/detkit.dir/nanodet.cpp.o
-.PHONY : nanodet.cpp.o
+lib/vision.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/detkit.dir/build.make CMakeFiles/detkit.dir/lib/vision.cpp.o
+.PHONY : lib/vision.cpp.o
 
-nanodet.i: nanodet.cpp.i
-.PHONY : nanodet.i
+lib/vision.i: lib/vision.cpp.i
+.PHONY : lib/vision.i
 
 # target to preprocess a source file
-nanodet.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/detkit.dir/build.make CMakeFiles/detkit.dir/nanodet.cpp.i
-.PHONY : nanodet.cpp.i
+lib/vision.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/detkit.dir/build.make CMakeFiles/detkit.dir/lib/vision.cpp.i
+.PHONY : lib/vision.cpp.i
 
-nanodet.s: nanodet.cpp.s
-.PHONY : nanodet.s
+lib/vision.s: lib/vision.cpp.s
+.PHONY : lib/vision.s
 
 # target to generate assembly for a file
-nanodet.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/detkit.dir/build.make CMakeFiles/detkit.dir/nanodet.cpp.s
-.PHONY : nanodet.cpp.s
+lib/vision.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/detkit.dir/build.make CMakeFiles/detkit.dir/lib/vision.cpp.s
+.PHONY : lib/vision.cpp.s
 
-vision.o: vision.cpp.o
-.PHONY : vision.o
+main/fastest_test.o: main/fastest_test.cpp.o
+.PHONY : main/fastest_test.o
 
 # target to build an object file
-vision.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/detkit.dir/build.make CMakeFiles/detkit.dir/vision.cpp.o
-.PHONY : vision.cpp.o
+main/fastest_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fastest_test.dir/build.make CMakeFiles/Fastest_test.dir/main/fastest_test.cpp.o
+.PHONY : main/fastest_test.cpp.o
 
-vision.i: vision.cpp.i
-.PHONY : vision.i
+main/fastest_test.i: main/fastest_test.cpp.i
+.PHONY : main/fastest_test.i
 
 # target to preprocess a source file
-vision.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/detkit.dir/build.make CMakeFiles/detkit.dir/vision.cpp.i
-.PHONY : vision.cpp.i
+main/fastest_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fastest_test.dir/build.make CMakeFiles/Fastest_test.dir/main/fastest_test.cpp.i
+.PHONY : main/fastest_test.cpp.i
 
-vision.s: vision.cpp.s
-.PHONY : vision.s
+main/fastest_test.s: main/fastest_test.cpp.s
+.PHONY : main/fastest_test.s
 
 # target to generate assembly for a file
-vision.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/detkit.dir/build.make CMakeFiles/detkit.dir/vision.cpp.s
-.PHONY : vision.cpp.s
+main/fastest_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fastest_test.dir/build.make CMakeFiles/Fastest_test.dir/main/fastest_test.cpp.s
+.PHONY : main/fastest_test.cpp.s
+
+main/nano_test.o: main/nano_test.cpp.o
+.PHONY : main/nano_test.o
+
+# target to build an object file
+main/nano_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Nano_test.dir/build.make CMakeFiles/Nano_test.dir/main/nano_test.cpp.o
+.PHONY : main/nano_test.cpp.o
+
+main/nano_test.i: main/nano_test.cpp.i
+.PHONY : main/nano_test.i
+
+# target to preprocess a source file
+main/nano_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Nano_test.dir/build.make CMakeFiles/Nano_test.dir/main/nano_test.cpp.i
+.PHONY : main/nano_test.cpp.i
+
+main/nano_test.s: main/nano_test.cpp.s
+.PHONY : main/nano_test.s
+
+# target to generate assembly for a file
+main/nano_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Nano_test.dir/build.make CMakeFiles/Nano_test.dir/main/nano_test.cpp.s
+.PHONY : main/nano_test.cpp.s
 
 # Help Target
 help:
@@ -682,22 +732,27 @@ help:
 	@echo "... NightlySubmit"
 	@echo "... NightlyTest"
 	@echo "... NightlyUpdate"
+	@echo "... Fastest_test"
+	@echo "... Nano_test"
 	@echo "... detkit"
-	@echo "... detector.o"
-	@echo "... detector.i"
-	@echo "... detector.s"
-	@echo "... fastest_test.o"
-	@echo "... fastest_test.i"
-	@echo "... fastest_test.s"
-	@echo "... fastestdet.o"
-	@echo "... fastestdet.i"
-	@echo "... fastestdet.s"
-	@echo "... nanodet.o"
-	@echo "... nanodet.i"
-	@echo "... nanodet.s"
-	@echo "... vision.o"
-	@echo "... vision.i"
-	@echo "... vision.s"
+	@echo "... lib/detector.o"
+	@echo "... lib/detector.i"
+	@echo "... lib/detector.s"
+	@echo "... lib/fastestdet.o"
+	@echo "... lib/fastestdet.i"
+	@echo "... lib/fastestdet.s"
+	@echo "... lib/nanodet.o"
+	@echo "... lib/nanodet.i"
+	@echo "... lib/nanodet.s"
+	@echo "... lib/vision.o"
+	@echo "... lib/vision.i"
+	@echo "... lib/vision.s"
+	@echo "... main/fastest_test.o"
+	@echo "... main/fastest_test.i"
+	@echo "... main/fastest_test.s"
+	@echo "... main/nano_test.o"
+	@echo "... main/nano_test.i"
+	@echo "... main/nano_test.s"
 .PHONY : help
 
 
