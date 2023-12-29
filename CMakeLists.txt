@@ -5,11 +5,6 @@ project(detkit VERSION 0.1.0 LANGUAGES C CXX)
 include(CTest)
 enable_testing()
 
-# file(GLOB detkit_SRC
-#      "*.h"
-#      "*.cpp"
-# )
-
 file( GLOB LIB_SOURCES lib/*.cpp )
 file( GLOB LIB_HEADERS lib/*.h )
 add_library( detkit ${LIB_SOURCES} ${LIB_HEADERS} )
@@ -32,6 +27,12 @@ add_executable(Nano_test main/nano_test.cpp)
 target_link_libraries(Nano_test detkit)
 target_include_directories(Nano_test PRIVATE lib)
 target_include_directories(Nano_test PRIVATE "/home/justinfung/cpp_libs/rapidjson-1.1.0/include")
+
+# Build shape test
+add_executable(Shape_test main/shape_test.cpp)
+target_link_libraries(Shape_test detkit)
+target_include_directories(Shape_test PRIVATE lib)
+target_include_directories(Shape_test PRIVATE "/home/justinfung/cpp_libs/rapidjson-1.1.0/include")
 
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
