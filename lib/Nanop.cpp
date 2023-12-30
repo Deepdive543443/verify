@@ -68,13 +68,13 @@ static void qsort_descent_inplace(std::vector<Object>& faceobjects, int left, in
         }
     }
 
-    // #pragma omp parallel sections
+    #pragma omp parallel sections
     {
-        // #pragma omp section
+        #pragma omp section
         {
             if (left < j) qsort_descent_inplace(faceobjects, left, j);
         }
-        // #pragma omp section
+        #pragma omp section
         {
             if (i < right) qsort_descent_inplace(faceobjects, i, right);
         }
@@ -93,7 +93,7 @@ static void qsort_descent_inplace(std::vector<Object>& faceobjects)
 static void generate_proposals(ncnn::Mat& cls_pred, ncnn::Mat& dis_pred, int stride, const ncnn::Mat& in_pad, float prob_threshold, std::vector<Object>& objects)
 {
     // cls_pred = cls_pred.reshape(cls_pred.c, cls_pred.w, cls_pred.h);
-    dis_pred = dis_pred.reshape(dis_pred.c, dis_pred.w, dis_pred.h); // 2 hwc
+    // dis_pred = dis_pred.reshape(dis_pred.c, dis_pred.w, dis_pred.h); // 2 hwc
 
     const int num_grid_x = cls_pred.w;
     const int num_grid_y = cls_pred.h;
@@ -191,7 +191,6 @@ static void generate_proposals(ncnn::Mat& cls_pred, ncnn::Mat& dis_pred, int str
                 // std::cout << "obj.label " << obj.label << std::endl;
                 // std::cout << "obj.prob " << obj.prob << std::endl;
             }
-
         }
     }
 }
@@ -395,15 +394,15 @@ int NanodetP::detect(const cv::Mat& rgb, std::vector<Object>& objects, float pro
     } objects_area_greater;
     std::sort(objects.begin(), objects.end(), objects_area_greater);
 
-    for (Object obj : objects)
-    {
-        std::cout << "obj.rect.x " << obj.rect.x << std::endl;
-        std::cout << "obj.rect.y " << obj.rect.y << std::endl;
-        std::cout << "obj.rect.width " << obj.rect.width << std::endl;
-        std::cout << "obj.rect.height " << obj.rect.height << std::endl;
-        std::cout << "obj.label " << obj.label << std::endl;
-        std::cout << "obj.prob " << obj.prob << std::endl;
-    }
+    // for (Object obj : objects)
+    // {
+    //     std::cout << "obj.rect.x " << obj.rect.x << std::endl;
+    //     std::cout << "obj.rect.y " << obj.rect.y << std::endl;
+    //     std::cout << "obj.rect.width " << obj.rect.width << std::endl;
+    //     std::cout << "obj.rect.height " << obj.rect.height << std::endl;
+    //     std::cout << "obj.label " << obj.label << std::endl;
+    //     std::cout << "obj.prob " << obj.prob << std::endl;
+    // }
 
     return 0;
 }

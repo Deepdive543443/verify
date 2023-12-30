@@ -1,5 +1,5 @@
 7767517
-204 244
+208 248
 Input                    data                     0 1 data
 Convolution              convrelu_0               1 1 data 1 0=24 1=3 -23310=1,1.000000e-01 11=3 12=1 13=2 14=1 2=1 3=2 4=1 5=1 6=648 9=2
 Pooling                  maxpool2d_158            1 1 1 2 0=0 1=3 11=3 12=2 13=1 2=2 3=1 5=1
@@ -187,20 +187,24 @@ Convolution              convrelu_50              1 1 218 219 0=128 1=1 -23310=1
 ConvolutionDepthWise     convdwrelu_15            1 1 219 220 0=128 1=5 -23310=1,1.000000e-01 11=5 12=1 13=1 14=2 2=1 3=1 4=2 5=1 6=3200 7=128 9=2
 Convolution              convrelu_51              1 1 220 221 0=128 1=1 -23310=1,1.000000e-01 11=1 12=1 13=1 14=0 2=1 3=1 4=0 5=1 6=16384 9=2
 Convolution              conv_86                  1 1 221 222 0=112 1=1 11=1 12=1 13=1 14=0 2=1 3=1 4=0 5=1 6=14336
-Slice                    tensor_split_0           1 2 222 223 dis64 -23300=2,80,-233 1=0
+Slice                    tensor_split_0           1 2 222 223 dis64_pre -23300=2,80,-233 1=0
 ConvolutionDepthWise     convdwrelu_13            1 1 217 225 0=128 1=5 -23310=1,1.000000e-01 11=5 12=1 13=1 14=2 2=1 3=1 4=2 5=1 6=3200 7=128 9=2
 Convolution              convrelu_52              1 1 225 226 0=128 1=1 -23310=1,1.000000e-01 11=1 12=1 13=1 14=0 2=1 3=1 4=0 5=1 6=16384 9=2
 Convolution              conv_83                  1 1 226 227 0=112 1=1 11=1 12=1 13=1 14=0 2=1 3=1 4=0 5=1 6=14336
-Slice                    tensor_split_1           1 2 227 228 dis32 -23300=2,80,-233 1=0
+Slice                    tensor_split_1           1 2 227 228 dis32_pre -23300=2,80,-233 1=0
 ConvolutionDepthWise     convdwrelu_11            1 1 215 230 0=128 1=5 -23310=1,1.000000e-01 11=5 12=1 13=1 14=2 2=1 3=1 4=2 5=1 6=3200 7=128 9=2
 Convolution              convrelu_53              1 1 230 231 0=128 1=1 -23310=1,1.000000e-01 11=1 12=1 13=1 14=0 2=1 3=1 4=0 5=1 6=16384 9=2
 Convolution              conv_80                  1 1 231 232 0=112 1=1 11=1 12=1 13=1 14=0 2=1 3=1 4=0 5=1 6=14336
-Slice                    tensor_split_2           1 2 232 233 dis16 -23300=2,80,-233 1=0
+Slice                    tensor_split_2           1 2 232 233 dis16_pre -23300=2,80,-233 1=0
 ConvolutionDepthWise     convdwrelu_9             1 1 213 235 0=128 1=5 -23310=1,1.000000e-01 11=5 12=1 13=1 14=2 2=1 3=1 4=2 5=1 6=3200 7=128 9=2
 Convolution              convrelu_54              1 1 235 236 0=128 1=1 -23310=1,1.000000e-01 11=1 12=1 13=1 14=0 2=1 3=1 4=0 5=1 6=16384 9=2
 Convolution              conv_77                  1 1 236 237 0=112 1=1 11=1 12=1 13=1 14=0 2=1 3=1 4=0 5=1 6=14336
-Slice                    tensor_split_3           1 2 237 238 dis8 -23300=2,80,-233 1=0
+Slice                    tensor_split_3           1 2 237 238 dis8_pre -23300=2,80,-233 1=0
 Sigmoid                  sigmoid_3                1 1 238 cls8
 Sigmoid                  sigmoid_2                1 1 233 cls16
 Sigmoid                  sigmoid_1                1 1 228 cls32
 Sigmoid                  sigmoid_0                1 1 223 cls64
+Permute                  Permute_1                1 1 dis64_pre dis64 0=3
+Permute                  Permute_2                1 1 dis32_pre dis32 0=3
+Permute                  Permute_3                1 1 dis16_pre dis16 0=3
+Permute                  Permute_4                1 1 dis8_pre dis8 0=3

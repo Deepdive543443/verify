@@ -60,8 +60,9 @@ int main(int argc, char** argv)
     {
         ncnn::Mat out;
         ex.extract(name, out);
-        out = out.reshape(out.c, out.w, out.h);
+        // out = out.reshape(out.c, out.w, out.h);
         print_shape(name, out);
+        
     }
     return 0;
 }
