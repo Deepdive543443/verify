@@ -1,0 +1,25 @@
+{
+    "name": "plus-m-1.5x_416 (3)",
+    "bin": "../models/nanodet-plus-m-1.5x_416 (3).bin",
+    "param": "../models/nanodet-plus-m-1.5x_416 (3).param",
+
+    "config":
+    {
+        "input_shape": 416,
+        "stride": [8, 16, 32, 64],
+        "num_classes": 80,
+        "reg_max": 7,
+
+        "mean_vals": [103.53, 116.28, 123.675],
+        "norm_vals": [0.017429, 0.017507, 0.017125]        
+    },
+
+    "ncnn":
+    {
+        "num_threats": 1,
+        "winograd_convolution": true,
+        "sgemm_convolution": true,
+        "int8_inference": true
+    }
+}
+
