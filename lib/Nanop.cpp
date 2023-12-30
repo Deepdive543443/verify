@@ -117,6 +117,7 @@ static void generate_proposals(ncnn::Mat& cls_pred, ncnn::Mat& dis_pred, int str
             float *score_ptr = cls_pred.row(i) + j;
             float max_score = -FLT_MAX;
             int max_label = -1;
+            // const int idx = i * num_grid_x + j;
 
             for (int cls = 0; cls < num_class; cls++)
             {
@@ -129,7 +130,7 @@ static void generate_proposals(ncnn::Mat& cls_pred, ncnn::Mat& dis_pred, int str
 
             if (max_score >= prob_threshold)
             {
-                ncnn::Mat bbox_pred(reg_max_1, 4, (void*) dis_pred.row(j) + (i * hstep_dis));
+                ncnn::Mat bbox_pred(reg_max_1, 4, (void*) dis_pred.row(i * num_grid_x + j));
                 // std::cout << "max_score " << max_score << std::endl;
                 // std::cout << "max_label " << max_label << std::endl;
                 {

@@ -45,6 +45,6 @@ int main(int argc, char** argv)
     std::vector<Object> objects;
     nanodetp.detect(bgr, objects);
     nanodetp.draw(bgr, objects);
-    cv::imwrite("../output/test_output.png", bgr);
+    cv::imwrite("Testing/test_output.png", bgr);
     return 0;
 }
