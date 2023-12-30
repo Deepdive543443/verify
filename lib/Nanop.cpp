@@ -68,13 +68,13 @@ static void qsort_descent_inplace(std::vector<Object>& faceobjects, int left, in
         }
     }
 
-    #pragma omp parallel sections
+    // #pragma omp parallel sections
     {
-        #pragma omp section
+        // #pragma omp section
         {
             if (left < j) qsort_descent_inplace(faceobjects, left, j);
         }
-        #pragma omp section
+        // #pragma omp section
         {
             if (i < right) qsort_descent_inplace(faceobjects, i, right);
         }
@@ -166,20 +166,20 @@ static void generate_proposals(ncnn::Mat& cls_pred, ncnn::Mat& dis_pred, int str
                 float x_center = j * stride;
                 float y_center = i * stride;
 
-                float xmin = x_center - pred_ltrb[0];
-                float ymin = y_center - pred_ltrb[1];
-                float xmax = x_center + pred_ltrb[2];
-                float ymax = y_center + pred_ltrb[3];
+                // float xmin = x_center - pred_ltrb[0];
+                // float ymin = y_center - pred_ltrb[1];
+                // float xmax = x_center + pred_ltrb[2];
+                // float ymax = y_center + pred_ltrb[3];
 
                 Object obj;
-                // obj.rect.x = x_center - pred_ltrb[0];
-                // obj.rect.y = y_center - pred_ltrb[1];
-                // obj.rect.width =  pred_ltrb[2] + pred_ltrb[0];
-                // obj.rect.height = pred_ltrb[3] + pred_ltrb[1];
-                obj.rect.x = xmin;
-                obj.rect.y = ymin;
-                obj.rect.width = xmax - xmin;
-                obj.rect.height = ymax - ymin;
+                obj.rect.x = x_center - pred_ltrb[0];
+                obj.rect.y = y_center - pred_ltrb[1];
+                obj.rect.width =  pred_ltrb[2] + pred_ltrb[0];
+                obj.rect.height = pred_ltrb[3] + pred_ltrb[1];
+                // obj.rect.x = xmin;
+                // obj.rect.y = ymin;
+                // obj.rect.width = xmax - xmin;
+                // obj.rect.height = ymax - ymin;
                 obj.label = max_label;
                 obj.prob = max_score;
                 objects.push_back(obj);
@@ -253,13 +253,13 @@ int NanodetP::detect(const cv::Mat& rgb, std::vector<Object>& objects, float pro
     float scale = 1.f;
     if (w > h)
     {
-        scale = (float)target_size / w;
+        scale = (float) target_size / w;
         w = target_size;
         h = h * scale;
     }
     else
     {
-        scale = (float)target_size / h;
+        scale = (float) target_size / h;
         h = target_size;
         w = w * scale;
     }
@@ -403,6 +403,81 @@ int NanodetP::detect(const cv::Mat& rgb, std::vector<Object>& objects, float pro
         std::cout << "obj.rect.height " << obj.rect.height << std::endl;
         std::cout << "obj.label " << obj.label << std::endl;
         std::cout << "obj.prob " << obj.prob << std::endl;
+    }
+
+    return 0;
+}
+
+int NanodetP::draw(cv::Mat& rgb, const std::vector<Object>& objects)
+{
+    static const char* class_names[] = {
+        "person", "bicycle", "car", "motorcycle", "airplane", "bus", "train", "truck", "boat", "traffic light",
+        "fire hydrant", "stop sign", "parking meter", "bench", "bird", "cat", "dog", "horse", "sheep", "cow",
+        "elephant", "bear", "zebra", "giraffe", "backpack", "umbrella", "handbag", "tie", "suitcase", "frisbee",
+        "skis", "snowboard", "sports ball", "kite", "baseball bat", "baseball glove", "skateboard", "surfboard",
+        "tennis racket", "bottle", "wine glass", "cup", "fork", "knife", "spoon", "bowl", "banana", "apple",
+        "sandwich", "orange", "broccoli", "carrot", "hot dog", "pizza", "donut", "cake", "chair", "couch",
+        "potted plant", "bed", "dining table", "toilet", "tv", "laptop", "mouse", "remote", "keyboard", "cell phone",
+        "microwave", "oven", "toaster", "sink", "refrigerator", "book", "clock", "vase", "scissors", "teddy bear",
+        "hair drier", "toothbrush"
+    };
+
+    static const unsigned char colors[19][3] = {
+        { 54,  67, 244},
+        { 99,  30, 233},
+        {176,  39, 156},
+        {183,  58, 103},
+        {181,  81,  63},
+        {243, 150,  33},
+        {244, 169,   3},
+        {212, 188,   0},
+        {136, 150,   0},
+        { 80, 175,  76},
+        { 74, 195, 139},
+        { 57, 220, 205},
+        { 59, 235, 255},
+        {  7, 193, 255},
+        {  0, 152, 255},
+        { 34,  87, 255},
+        { 72,  85, 121},
+        {158, 158, 158},
+        {139, 125,  96}
+    };
+
+    int color_index = 0;
+
+    for (size_t i = 0; i < objects.size(); i++)
+    {
+        const Object& obj = objects[i];
+
+//         fprintf(stderr, "%d = %.5f at %.2f %.2f %.2f x %.2f\n", obj.label, obj.prob,
+//                 obj.rect.x, obj.rect.y, obj.rect.width, obj.rect.height);
+
+        const unsigned char* color = colors[color_index % 19];
+        color_index++;
+
+        cv::Scalar cc(color[0], color[1], color[2]);
+
+        cv::rectangle(rgb, obj.rect, cc, 2);
+
+        char text[256];
+        sprintf(text, "%s %.1f%%", class_names[obj.label], obj.prob * 100);
+
+        int baseLine = 0;
+        cv::Size label_size = cv::getTextSize(text, cv::FONT_HERSHEY_SIMPLEX, 0.5, 1, &baseLine);
+
+        int x = obj.rect.x;
+        int y = obj.rect.y - label_size.height - baseLine;
+        if (y < 0)
+            y = 0;
+        if (x + label_size.width > rgb.cols)
+            x = rgb.cols - label_size.width;
+
+        cv::rectangle(rgb, cv::Rect(cv::Point(x, y), cv::Size(label_size.width, label_size.height + baseLine)), cc, -1);
+
+        cv::Scalar textcc = (color[0] + color[1] + color[2] >= 381) ? cv::Scalar(0, 0, 0) : cv::Scalar(255, 255, 255);
+
+        cv::putText(rgb, text, cv::Point(x, y + label_size.height), cv::FONT_HERSHEY_SIMPLEX, 0.5, textcc, 1);
     }
 
     return 0;
