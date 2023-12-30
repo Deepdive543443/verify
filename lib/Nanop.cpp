@@ -129,7 +129,7 @@ static void generate_proposals(ncnn::Mat& cls_pred, ncnn::Mat& dis_pred, int str
 
             if (max_score >= prob_threshold)
             {
-                ncnn::Mat bbox_pred(reg_max_1, 4, (void*) dis_pred.row(j) + hstep_dis);
+                ncnn::Mat bbox_pred(reg_max_1, 4, (void*) dis_pred.row(j) + (i * hstep_dis));
                 // std::cout << "max_score " << max_score << std::endl;
                 // std::cout << "max_label " << max_label << std::endl;
                 {
@@ -333,7 +333,7 @@ int NanodetP::detect(const cv::Mat& rgb, std::vector<Object>& objects, float pro
         // std::cout << "dis32: h " << dis_pred.h << std::endl;
         // std::cout << "dis32: w " << dis_pred.w << std::endl;
         std::vector<Object> obj32;
-        generate_proposals(cls_pred, dis_pred, 16, in_pad, prob_threshold, obj32);
+        generate_proposals(cls_pred, dis_pred, 32, in_pad, prob_threshold, obj32);
         proposals.insert(proposals.end(), obj32.begin(), obj32.end());
         
     }
@@ -354,7 +354,7 @@ int NanodetP::detect(const cv::Mat& rgb, std::vector<Object>& objects, float pro
         // std::cout << "dis64: h " << dis_pred.h << std::endl;
         // std::cout << "dis64: w " << dis_pred.w << std::endl;
         std::vector<Object> obj64;
-        generate_proposals(cls_pred, dis_pred, 16, in_pad, prob_threshold, obj64);
+        generate_proposals(cls_pred, dis_pred, 64, in_pad, prob_threshold, obj64);
         proposals.insert(proposals.end(), obj64.begin(), obj64.end());
     }
 
