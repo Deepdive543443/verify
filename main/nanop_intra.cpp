@@ -8,7 +8,7 @@
 #include "rapidjson/stringbuffer.h"
 #include "rapidjson/filereadstream.h"
 
-void load_param(const char* json_file, NanodetP &nanodetP)
+std::string load_param(const char* json_file, NanodetP &nanodetP)
 {
     FILE* fp = fopen(json_file, "rb"); 
     char readBuffer[4000];
@@ -33,13 +33,14 @@ void load_param(const char* json_file, NanodetP &nanodetP)
         norm_vals,
         0
     );
+    return doc["image"].GetString(); 
 }
 
 int main(int argc, char** argv)
 {
     NanodetP nanodetp;
-    load_param("../config/nanodet-plus-m-1.5x_416_new_infra.json", nanodetp);
-    cv::Mat bgr = cv::imread("../image/1 EYFejGUjvjPcc4PZTwoufw.jpg", 1);
+    std::string image_name = load_param("../config/nanodet-plus-m-1.5x_416_new_infra.json", nanodetp);
+    cv::Mat bgr = cv::imread(image_name, 1);
     std::cout <<" Hello Nanoi" << std::endl;
 
     std::vector<Object> objects;
